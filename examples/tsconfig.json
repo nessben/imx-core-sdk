@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "esModuleInterop": true,
+
     "baseUrl": ".",
     "paths": {
         "@imtbl/core-sdk": ["./../src"]
