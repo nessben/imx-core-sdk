@@ -2,19 +2,20 @@ import { ImmutableX, Config, UnsignedOrderRequest } from '@imtbl/core-sdk';
 import { generateWalletConnection } from './libs/walletConnection';
 
 (async () => {
-  const walletConnection = await generateWalletConnection('goerli');
+  const walletConnection = await generateWalletConnection('mainnet');
+  
+  const imxClient = new ImmutableX(Config.PRODUCTION);
 
-  const imxClient = new ImmutableX(Config.SANDBOX);
 
   const orderParams: UnsignedOrderRequest = {
-    buy: {
-      type: 'ETH',
-      amount: '',
-    },
     sell: {
+      type: 'ETH',
+      amount: '1500000000000000',
+    },
+    buy: {
       type: 'ERC721',
-      tokenAddress: '',
-      tokenId: '',
+      tokenAddress: '0x0000995e7ab2aa13c5c735484f3b816de7c353f4',
+      tokenId: '822',
     },
   };
 
